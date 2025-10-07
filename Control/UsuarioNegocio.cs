@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Win32;
 using Model;
 
 namespace Control
@@ -75,9 +76,9 @@ namespace Control
             try
             {
                 datos.setearConsulta("Update USERS set Nombre = @nombre, Apellido = @apellido, UrlImagenPerfil = @imagen Where Id = @id");
+                datos.setearParametro("@imagen", usuario.URLImagenPerfil != null ? usuario.URLImagenPerfil : "");
                 datos.setearParametro("@nombre", usuario.Nombre);
                 datos.setearParametro("@apellido", usuario.Apellido);
-                datos.setearParametro("@imagen", usuario.URLImagenPerfil);
                 datos.setearParametro("@id", usuario.Id);
                 datos.ejecutarAccion();
             }

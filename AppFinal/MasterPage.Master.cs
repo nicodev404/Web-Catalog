@@ -13,18 +13,18 @@ namespace AppFinal
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            imgPerfil.ImageUrl = "https://openclipart.org/image/2000px/247319";
             if (!(Page is Login || Page is Default || Page is Registro || Page is Contacto))
             {
                 if (!Seguridad.SesionActiva(Session["usuario"]))
                     Response.Redirect("Login.aspx", false);
+                else
+                {
+                    Usuario usuario = (Usuario)Session["usuario"];
+                    if (!string.IsNullOrEmpty(usuario.URLImagenPerfil))
+                        imgPerfil.ImageUrl = "~/Images/" + usuario.URLImagenPerfil;
+                }
             }
-
-            if (Seguridad.SesionActiva(Session["usuario"]))
-            {
-                imgPerfil.ImageUrl = "~/images/" + ((Usuario)Session["usuario"]).URLImagenPerfil;
-            }
-            else
-                imgPerfil.ImageUrl = "https://openclipart.org/image/2000px/247319";
         }
 
         protected void btnRegistrarse_Click(object sender, EventArgs e)

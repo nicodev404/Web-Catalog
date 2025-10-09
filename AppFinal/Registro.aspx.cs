@@ -38,7 +38,7 @@ namespace AppFinal
             }
             catch (Exception ex)
             {
-                Session.Add("error", "Debes completar ambos campos");
+                Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }

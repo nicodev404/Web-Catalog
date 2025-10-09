@@ -20,6 +20,7 @@ namespace AppFinal
 
             if (!IsPostBack)
             {
+                Session["ListaArticulos"] = ListaArticulo;
                 Repetidor.DataSource = ListaArticulo;
                 Repetidor.DataBind();
             }
@@ -27,7 +28,8 @@ namespace AppFinal
 
         protected void btnVerDetalle_Click(object sender, EventArgs e)
         {
-            string valor = ((Button)sender).CommandArgument;
+            string id = ((Button)sender).CommandArgument;
+            Response.Redirect($"DetalleArticulo.aspx?Id={id}");
         }
     }
 }

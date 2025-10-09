@@ -41,7 +41,7 @@ namespace AppFinal
                     Response.Redirect("Error.aspx", false);
                 }
             }
-            catch (System.Threading.ThreadAbortException ex) { }
+            catch (System.Threading.ThreadAbortException) { }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());

@@ -14,7 +14,7 @@ namespace AppFinal
         protected void Page_Load(object sender, EventArgs e)
         {
             imgPerfil.ImageUrl = "https://openclipart.org/image/2000px/247319";
-            if (!(Page is Login || Page is Default || Page is Registro || Page is Contacto))
+            if (!(Page is Login || Page is Default || Page is Registro || Page is Contacto || Page is Error))
             {
                 if (!Seguridad.SesionActiva(Session["usuario"]))
                     Response.Redirect("Login.aspx", false);

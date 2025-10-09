@@ -50,9 +50,8 @@ namespace AppFinal
             }
             catch (Exception ex)
             {
-                Session.Add("Error", ex);
-                throw;
-                //Redireccion a pantalla de error...
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
 
@@ -99,8 +98,8 @@ namespace AppFinal
             }
             catch (Exception ex)
             {
-                Session.Add("Error", ex);
-                throw;
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
 
@@ -127,7 +126,8 @@ namespace AppFinal
             }
             catch (Exception ex)
             {
-                Session.Add("Error", ex);
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
     }

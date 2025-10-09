@@ -76,7 +76,7 @@ namespace Control
             try
             {
                 datos.setearConsulta("Update USERS set Nombre = @nombre, Apellido = @apellido, UrlImagenPerfil = @imagen Where Id = @id");
-                datos.setearParametro("@imagen", usuario.URLImagenPerfil != null ? usuario.URLImagenPerfil : "");
+                datos.setearParametro("@imagen", (object)usuario.URLImagenPerfil ?? DBNull.Value);
                 datos.setearParametro("@nombre", usuario.Nombre);
                 datos.setearParametro("@apellido", usuario.Apellido);
                 datos.setearParametro("@id", usuario.Id);

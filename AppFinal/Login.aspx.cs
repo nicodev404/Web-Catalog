@@ -24,6 +24,11 @@ namespace AppFinal
 
             try
             {
+                if (Validacion.validaTextoVacio(txtEmail) || Validacion.validaTextoVacio(txtPass))
+                {
+                    Session.Add("error", "Debes completar ambos campos");
+                    Response.Redirect("Error.aspx", false);
+                }
                 usuario = new Usuario(txtEmail.Text, txtPass.Text, false);
                 if (negocio.Loguear(usuario))
                 {
@@ -36,9 +41,10 @@ namespace AppFinal
                     Response.Redirect("Error.aspx", false);
                 }
             }
+            catch (System.Threading.ThreadAbortException ex) { }
             catch (Exception ex)
             {
-                Session.Add("Error", ex.ToString());
+                Session.Add("error", ex.ToString());
                 Response.Redirect("Error.aspx", false);
             }
         }

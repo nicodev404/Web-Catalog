@@ -19,19 +19,20 @@ namespace AppFinal
                 {
                     if (Seguridad.SesionActiva(Session["usuario"]))
                     {
-                        Usuario user = (Usuario)Session["usuario"];
-                        txtEmail.Text = user.Email;
+                        Usuario usuario = (Usuario)Session["usuario"];
+                        txtEmail.Text = usuario.Email;
                         txtEmail.ReadOnly = true;
-                        txtNombre.Text = user.Nombre;
-                        txtApellido.Text = user.Apellido;
-                        if (!string.IsNullOrEmpty(user.URLImagenPerfil))
-                            imgNuevoPerfil.ImageUrl = "~/Images/" + user.URLImagenPerfil;
+                        txtNombre.Text = usuario.Nombre;
+                        txtApellido.Text = usuario.Apellido;
+                        if (!string.IsNullOrEmpty(usuario.URLImagenPerfil))
+                            imgNuevoPerfil.ImageUrl = "~/Images/" + usuario.URLImagenPerfil;
                     }
                 }
             }
             catch (Exception ex)
             {
-                Session.Add("error", ex.ToString());           
+                Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
 
@@ -40,25 +41,26 @@ namespace AppFinal
             try
             {
                 UsuarioNegocio negocio = new UsuarioNegocio();
-                Usuario user = (Usuario)Session["usuario"];
+                Usuario usuario = (Usuario)Session["usuario"];
 
                 if (txtImagen.PostedFile.FileName != "")
                 {
                     string ruta = Server.MapPath("./Images/");
-                    txtImagen.PostedFile.SaveAs(ruta + "perfil-" + user.Id + ".jpg");
-                    user.URLImagenPerfil = "perfil-" + user.Id + ".jpg";
+                    txtImagen.PostedFile.SaveAs(ruta + "perfil-" + usuario.Id + ".jpg");
+                    usuario.URLImagenPerfil = "perfil-" + usuario.Id + ".jpg";
                 }
-                user.Nombre = txtNombre.Text;
-                user.Apellido = txtApellido.Text;
-                negocio.Actualizar(user);
+                usuario.Nombre = txtNombre.Text;
+                usuario.Apellido = txtApellido.Text;
+                negocio.Actualizar(usuario);
 
                 Image img = (Image)Master.FindControl("imgPerfil");
-                img.ImageUrl = "~/Images/" + user.URLImagenPerfil;
+                img.ImageUrl = "~/Images/" + usuario.URLImagenPerfil;
 
             }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
+                Response.Redirect("Error.aspx", false);
             }
         }
     }

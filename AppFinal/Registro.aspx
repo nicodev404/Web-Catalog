@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Registro" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="AppFinal.Registro" %>
+﻿<%@ Page Title="Registrarse" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="AppFinal.Registro" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script>
@@ -20,6 +20,12 @@
             return true;
         }
     </script>
+    <style>
+        .Validacion {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -28,6 +34,7 @@
             <div class="mb-3">
                 <asp:Label ID="lblEmail" Font-Bold="true" Font-Size="X-Large" runat="server" Text="Ingrese su email"></asp:Label>
                 <asp:TextBox ID="txtEmail" ClientIDMode="Static" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
+                <asp:RegularExpressionValidator CssClass="Validacion" ErrorMessage="Formato email requerido" ControlToValidate="txtEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" runat="server" />
             </div>
             <div class="mb-3">
                 <asp:Button ID="btnRegistrar" CssClass="btn-2 focus-ring focus-ring-info" runat="server" Text="Registrarse" OnClientClick="return Validar()" OnClick="btnRegistrar_Click" />

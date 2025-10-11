@@ -24,9 +24,12 @@ namespace AppFinal
 
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
                 if (Validacion.validaTextoVacio(txtEmail) || Validacion.validaTextoVacio(txtPass))
                 {
-                    Session.Add("error", "Debes completar ambos campos");
+                    Session.Add("error", "Debes completar ambos campos correctamente");
                     Response.Redirect("Error.aspx", false);
                 }
                 usuario = new Usuario(txtEmail.Text, txtPass.Text, false);

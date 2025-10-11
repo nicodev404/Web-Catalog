@@ -28,6 +28,12 @@
             return true;
         }
     </script>
+    <style>
+        .Validacion {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -35,6 +41,7 @@
         <div class="form-group">
             <asp:Label ID="lblEmail" Font-Bold="true" Font-Size="X-Large" CssClass="form-label" runat="server" Text="Email"></asp:Label>
             <asp:TextBox ID="txtEmail" ClientIDMode="Static" CssClass="form-control" BackColor="#333333" BorderColor="#0dcaf0" ForeColor="White" runat="server"></asp:TextBox>
+            <asp:RegularExpressionValidator CssClass="Validacion" ErrorMessage="Formato email requerido" ControlToValidate="txtEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" runat="server" />
         </div>
         <div class="form-group">
             <asp:Label ID="lblAsunto" Font-Bold="true" Font-Size="X-Large" CssClass="form-label" runat="server" Text="Asunto"></asp:Label>

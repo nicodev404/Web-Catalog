@@ -29,6 +29,12 @@
             return true;
         }
     </script>
+    <style>
+        .Validacion {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -60,6 +66,7 @@
             <div class="mb-3">
                 <label for="txtPrecio" class="form-label">Precio</label>
                 <asp:TextBox ClientIDMode="Static" runat="server" ID="txtPrecio" CssClass="form-control" />
+                <asp:RegularExpressionValidator CssClass="Validacion" ErrorMessage="Solo números" ControlToValidate="txtPrecio" ValidationExpression="^[0-9]+$" runat="server" />
             </div>
             <div class="formulario-accion">
                 <div class="botones-accion">

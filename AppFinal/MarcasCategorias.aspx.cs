@@ -27,6 +27,11 @@ namespace AppFinal
         {
             try
             {
+                if (Validacion.validaTextoVacio(txtAgregarMarca))
+                {
+                    Session.Add("error", "Debe ingresar una marca");
+                    Response.Redirect("Error.aspx", false);
+                }
                 Marca nueva = new Marca();
                 MarcaCategoria negocio = new MarcaCategoria();
                 nueva.Descripcion = txtAgregarMarca.Text;
@@ -46,6 +51,11 @@ namespace AppFinal
         {
             try
             {
+                if (Validacion.validaTextoVacio(txtAgregarCategoria))
+                {
+                    Session.Add("error", "Debe ingresar una categoría");
+                    Response.Redirect("Error.aspx", false);
+                }
                 Categoria nueva = new Categoria();
                 MarcaCategoria negocio = new MarcaCategoria();
                 nueva.Descripcion = txtAgregarCategoria.Text;

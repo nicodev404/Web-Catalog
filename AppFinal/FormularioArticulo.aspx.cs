@@ -74,6 +74,14 @@ namespace AppFinal
         {
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
+                if (Validacion.validaTextoVacio(txtCodigo) || Validacion.validaTextoVacio(txtNombre) || Validacion.validaTextoVacio(txtPrecio))
+                {
+                    Session.Add("error", "Campos incompletos");
+                    Response.Redirect("Error.aspx", false);
+                }
                 Articulo nuevo = new Articulo();
                 ArticuloNegocio negocio = new ArticuloNegocio();
                 nuevo.Codigo = txtCodigo.Text;

@@ -17,10 +17,18 @@ namespace AppFinal
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            EmailService service = new EmailService();
-            service.armarCorreo(txtEmail.Text, txtAsunto.Text, txtMensaje.Text);
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                    return;
+                if (Validacion.validaTextoVacio(txtEmail) || Validacion.validaTextoVacio(txtAsunto) || Validacion.validaTextoVacio(txtMensaje))
+                {
+                    Session.Add("error", "Debe completar los campos vacíos");
+                    Response.Redirect("Error.aspx", false);
+                }
+                EmailService service = new EmailService();
+                service.armarCorreo(txtEmail.Text, txtAsunto.Text, txtMensaje.Text);
                 service.enviarEmail();
             }
             catch (Exception ex)

@@ -3,6 +3,32 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Styles/FormularioStyle.css" rel="stylesheet" />
     <link href="Styles/Botones.css" rel="stylesheet" />
+    <script>
+        function Validar() {
+            const txtCodigo = document.getElementById("txtCodigo");
+            const txtNombre = document.getElementById("txtNombre");
+            const txtPrecio = document.getElementById("txtPrecio");
+            if (txtCodigo.value == "") {
+                txtCodigo.classList.add("is-invalid")
+                return false;
+            }
+            txtCodigo.classList.remove("is-invalid")
+            txtCodigo.classList.add("is-valid")
+            if (txtNombre.value == "") {
+                txtNombre.classList.add("is-invalid");
+                return false
+            }
+            txtNombre.classList.remove("is-invalid");
+            txtNombre.classList.add("is-valid");
+            if (txtPrecio.value == "") {
+                txtPrecio.classList.add("is-invalid");
+                return false;
+            }
+            txtPrecio.classList.remove("is-invalid");
+            txtPrecio.classList.add("is-valid");
+            return true;
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -17,11 +43,11 @@
             </div>
             <div class="mb-3">
                 <label for="txtCodigo" class="form-label">Código</label>
-                <asp:TextBox runat="server" ID="txtCodigo" CssClass="form-control" />
+                <asp:TextBox ClientIDMode="Static" runat="server" ID="txtCodigo" CssClass="form-control" />
             </div>
             <div class="mb-3">
                 <label for="txtNombre" class="form-label">Nombre</label>
-                <asp:TextBox runat="server" ID="txtNombre" CssClass="form-control" />
+                <asp:TextBox ClientIDMode="Static" runat="server" ID="txtNombre" CssClass="form-control" />
             </div>
             <div class="mb-3">
                 <label for="ddlMarca" class="form-label">Marca</label>
@@ -33,11 +59,11 @@
             </div>
             <div class="mb-3">
                 <label for="txtPrecio" class="form-label">Precio</label>
-                <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" />
+                <asp:TextBox ClientIDMode="Static" runat="server" ID="txtPrecio" CssClass="form-control" />
             </div>
             <div class="formulario-accion">
                 <div class="botones-accion">
-                    <asp:Button ID="btnAceptar" runat="server" Text="Agregar" CssClass="btn-2 focus-ring focus-ring-success" BackColor="#198754" ForeColor="White" OnClick="btnAceptar_Click" />
+                    <asp:Button ID="btnAceptar" runat="server" Text="Agregar" CssClass="btn-2 focus-ring focus-ring-success" BackColor="#198754" ForeColor="White" OnClientClick="return Validar()" OnClick="btnAceptar_Click" />
 
                     <asp:UpdatePanel runat="server">
                         <ContentTemplate>

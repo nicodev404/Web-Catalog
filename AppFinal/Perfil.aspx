@@ -1,6 +1,25 @@
 ﻿<%@ Page Title="Perfil" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="AppFinal.Perfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script>
+        function Validar() {
+            const txtNombre = document.getElementById("txtNombre");
+            const txtApellido = document.getElementById("txtApellido");
+            if (txtNombre.value == "") {
+                txtNombre.classList.add("is-invalid");
+                return false;
+            }
+            txtNombre.classList.remove("is-invalid");
+            txtNombre.classList.add("is-valid");
+            if (txtApellido.value == "") {
+                txtApellido.classList.add("is-invalid");
+                return false;
+            }
+            txtApellido.classList.remove("is-invalid");
+            txtApellido.classList.add("is-valid");
+            return true;
+        }
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -15,11 +34,11 @@
             </div>
             <div class="mb-3">
                 <asp:Label ID="lblNombre" CssClass="form-label" Font-Size="Medium" runat="server" Text="Nombre"></asp:Label>
-                <asp:TextBox ID="txtNombre" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtNombre" ClientIDMode="Static" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
             </div>
             <div class="mb-3">
                 <asp:Label ID="lblApellido" CssClass="form-label" Font-Size="Medium" runat="server" Text="Apellido"></asp:Label>
-                <asp:TextBox ID="txtApellido" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtApellido" ClientIDMode="Static" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
             </div>
         </div>
         <div class="col-4">
@@ -31,7 +50,7 @@
         </div>
         <div class="row">
             <div class="mb-3">
-                <asp:Button ID="btnGuardar" CssClass="btn-2 focus-ring focus-ring-info" ForeColor="#0dcaf0" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+                <asp:Button ID="btnGuardar" CssClass="btn-2 focus-ring focus-ring-info" ForeColor="#0dcaf0" runat="server" Text="Guardar" OnClientClick="return Validar()" OnClick="btnGuardar_Click" />
             </div>
         </div>
     </div>

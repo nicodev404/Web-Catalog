@@ -30,21 +30,21 @@ namespace AppFinal
                 if (Validacion.validaTextoVacio(txtEmail) || Validacion.validaTextoVacio(txtPass))
                 {
                     Session.Add("error", "Debes completar ambos campos correctamente");
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx", true);
                 }
                 usuario = new Usuario(txtEmail.Text, txtPass.Text, false);
                 if (negocio.Loguear(usuario))
                 {
                     Session.Add("usuario", usuario);
-                    Response.Redirect("Perfil.aspx", false);
+                    Response.Redirect("Perfil.aspx");
                 }
                 else
                 {
                     Session.Add("error", "Email o contraseña incorrectos");
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx");
                 }
             }
-            catch (System.Threading.ThreadAbortException) { }
+            catch (System.Threading.ThreadAbortException ex) { }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());

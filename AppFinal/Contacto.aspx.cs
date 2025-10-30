@@ -17,6 +17,7 @@ namespace AppFinal
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
+            EmailService service = new EmailService();
             try
             {
                 Page.Validate();
@@ -25,12 +26,12 @@ namespace AppFinal
                 if (Validacion.validaTextoVacio(txtEmail) || Validacion.validaTextoVacio(txtAsunto) || Validacion.validaTextoVacio(txtMensaje))
                 {
                     Session.Add("error", "Debe completar los campos vacíos");
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx", true);
                 }
-                EmailService service = new EmailService();
                 service.armarCorreo(txtEmail.Text, txtAsunto.Text, txtMensaje.Text);
                 service.enviarEmail();
             }
+            catch (System.Threading.ThreadAbortException) { }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());

@@ -30,16 +30,17 @@ namespace AppFinal
                 if (Validacion.validaTextoVacio(txtAgregarMarca))
                 {
                     Session.Add("error", "Debe ingresar una marca");
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx", true);
                 }
                 Marca nueva = new Marca();
                 MarcaCategoria negocio = new MarcaCategoria();
                 nueva.Descripcion = txtAgregarMarca.Text;
 
                 negocio.agregarMarcaSP(nueva);
-                Response.Redirect("MarcasCategorias.aspx", false);
+                Response.Redirect("MarcasCategorias.aspx");
 
             }
+            catch (System.Threading.ThreadAbortException) { }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
@@ -54,15 +55,16 @@ namespace AppFinal
                 if (Validacion.validaTextoVacio(txtAgregarCategoria))
                 {
                     Session.Add("error", "Debe ingresar una categoría");
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx", true);
                 }
                 Categoria nueva = new Categoria();
                 MarcaCategoria negocio = new MarcaCategoria();
                 nueva.Descripcion = txtAgregarCategoria.Text;
 
                 negocio.agregarCategoriaSP(nueva);
-                Response.Redirect("MarcasCategorias.aspx", false);
+                Response.Redirect("MarcasCategorias.aspx");
             }
+            catch (System.Threading.ThreadAbortException) { }
             catch (Exception ex)
             {
                 Session.Add("Error", ex.ToString());
@@ -106,6 +108,7 @@ namespace AppFinal
                     Response.Redirect("MarcasCategorias.aspx");
                 }
             }
+            catch (System.Threading.ThreadAbortException) { }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
@@ -124,6 +127,7 @@ namespace AppFinal
                     Response.Redirect("MarcasCategorias.aspx");
                 }
             }
+            catch (System.Threading.ThreadAbortException) { }
             catch (Exception ex)
             {
                 Session.Add("Error", ex.ToString());

@@ -80,7 +80,7 @@ namespace AppFinal
                 if (Validacion.validaTextoVacio(txtCodigo) || Validacion.validaTextoVacio(txtNombre) || Validacion.validaTextoVacio(txtPrecio))
                 {
                     Session.Add("error", "Campos incompletos");
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx", true);
                 }
                 Articulo nuevo = new Articulo();
                 ArticuloNegocio negocio = new ArticuloNegocio();
@@ -102,8 +102,9 @@ namespace AppFinal
                 else
                     negocio.agregarSP(nuevo);
 
-                Response.Redirect("Gestion.aspx", false);
+                Response.Redirect("Gestion.aspx");
             }
+            catch (System.Threading.ThreadAbortException) { }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
@@ -132,6 +133,7 @@ namespace AppFinal
                     Response.Redirect("Gestion.aspx");
                 }
             }
+            catch (System.Threading.ThreadAbortException) { }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());

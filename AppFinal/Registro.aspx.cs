@@ -18,6 +18,9 @@ namespace AppFinal
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            UsuarioNegocio negocio = new UsuarioNegocio();
+            EmailService service = new EmailService();
+
             try
             {
                 Page.Validate();
@@ -26,11 +29,9 @@ namespace AppFinal
                 if (Validacion.validaTextoVacio(txtEmail) || Validacion.validaTextoVacio(txtPass))
                 {
                     Session.Add("error", "Debes completar ambos campos correctamente");
-                    Response.Redirect("Error.aspx", false);
+                    Response.Redirect("Error.aspx", true);
                 }
                 Usuario usuario = new Usuario(txtEmail.Text, txtPass.Text, false);
-                UsuarioNegocio negocio = new UsuarioNegocio();
-                EmailService service = new EmailService();
                 usuario.Id = negocio.insertarNuevo(usuario);
                 Session.Add("usuario", usuario);
 
@@ -39,6 +40,7 @@ namespace AppFinal
 
                 Response.Redirect("Perfil.aspx");
             }
+            catch (System.Threading.ThreadAbortException ex) { }
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());

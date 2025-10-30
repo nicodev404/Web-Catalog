@@ -15,12 +15,12 @@ namespace Control
         {
             if (control is TextBox texto)
             {
-                if (string.IsNullOrEmpty(texto.Text)) 
+                if (!(string.IsNullOrEmpty(texto.Text)))
                     return false;
                 else
                     return true;
             }
-                return false;
+            return false;
         }
     }
 }

@@ -25,6 +25,19 @@ namespace AppFinal
                         imgPerfil.ImageUrl = "~/Images/" + usuario.URLImagenPerfil;
                 }
             }
+            else
+            {
+                ActualizarImagenPerfil();
+            }
+        }
+
+        private void ActualizarImagenPerfil()
+        {
+            if (Session["usuario"] != null)
+            {
+                Usuario usuario = (Usuario)Session["usuario"];
+                imgPerfil.ImageUrl = !string.IsNullOrEmpty(usuario.URLImagenPerfil) ? "~/Images/" + usuario.URLImagenPerfil : "https://openclipart.org/image/2000px/247319";
+            }
         }
 
         protected void btnRegistrarse_Click(object sender, EventArgs e)

@@ -84,12 +84,5 @@ namespace AppFinal
             txtDescripcion.Enabled = false;
             txtPrecio.Enabled = false;
         }
-
-        protected void btnFavorito_Click(object sender, EventArgs e)
-        {
-            if (!Seguridad.SesionActiva(Session["usuario"]))
-                Response.Redirect("Login.aspx");
-
-        }
     }
 }

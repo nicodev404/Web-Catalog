@@ -25,7 +25,7 @@ namespace Control
         public void armarCorreo(string emailDestino, string asunto, string cuerpo)
         {
             email = new MailMessage();
-            email.From = new MailAddress("noresponder@nicoczastore.com");
+            email.From = new MailAddress("noresponder@nicodevstore.com");
             email.To.Add(emailDestino);
             email.Subject = asunto;
             email.IsBodyHtml = true;

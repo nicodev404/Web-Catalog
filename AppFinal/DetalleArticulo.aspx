@@ -29,11 +29,6 @@
                 <label for="txtPrecio" class="form-label">Precio</label>
                 <asp:TextBox runat="server" ID="txtPrecio" CssClass="form-control" />
             </div>
-            <div class="formulario-accion">
-                <div class="botones-accion">
-                    <asp:Button ID="btnFav" CssClass="btn btn-outline-info" runat="server" Text="❤️" />
-                </div>
-            </div>
         </div>
         <div class="formulario-columna derecha">
             <div class="mb-3">
@@ -44,7 +39,7 @@
                 <label for="txtURLImagen" class="form-label">Imágen</label>
             </div>
             <asp:Image ImageUrl="https://www.afim.com.eg/public/images/no-photo.png" runat="server" ID="imgArticulo"
-                Width="400px" Long="200px" />
+                Width="400px" Long="250px" />
         </div>
     </div>
 </asp:Content>

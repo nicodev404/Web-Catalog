@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title>NICOCZA Web Store</title>
+    <title>NicoDev Web Store</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -44,9 +44,9 @@
                             else
                             {
                         %>
-                        <asp:Button ID="btnSalir" CssClass="btn btn-outline-info" runat="server" Text="Salir" OnClick="btnSalir_Click" />
+                        <asp:Button ID="btnSalir" CssClass="btn btn-outline-info" runat="server" Text="Cerrar sesión" OnClick="btnSalir_Click" />
                         <%}%>
-                        <asp:Image ID="imgPerfil" Height="40px" Width="40px" runat="server" />
+                        <asp:Image ID="imgPerfil" CssClass="rounded-circle" Height="40px" Width="40px" runat="server" />
                     </form1>
                 </div>
             </div>
@@ -60,9 +60,9 @@
         </div>
 
         <div id="footer">
-            <span>contacto@nicoczawebstore.com</span>
+            <span>contacto@nicodevwebstore.com</span>
             <span>Whatsapp +54 11 0000 0000</span>
-            <span>www.nicoczawebstore.com</span>
+            <span>www.nicodevwebstore.com</span>
         </div>
     </form>
 </body>

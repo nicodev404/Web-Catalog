@@ -31,7 +31,7 @@
             </div>
             <div class="formulario-accion">
                 <div class="botones-accion">
-                    <asp:Button ID="btnFavorito" CssClass="btn-2 focus-ring focus-ring-info" ForeColor="#0dcaf0" runat="server" Text="Añadir a favoritos" OnClick="btnFavorito_Click" />
+                    <asp:Button ID="btnFav" CssClass="btn btn-outline-info" runat="server" Text="❤️" />
                 </div>
             </div>
         </div>

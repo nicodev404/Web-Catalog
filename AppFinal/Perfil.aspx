@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Mi perfil" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="AppFinal.Perfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Styles/fotoPerfil.css" rel="stylesheet" />
     <script>
         function Validar() {
             const txtNombre = document.getElementById("txtNombre");
@@ -46,7 +47,7 @@
                 <asp:Label ID="lblImagen" runat="server" Text="Imágen"></asp:Label>
                 <input type="file" id="txtImagen" class="form-control" runat="server" />
             </div>
-            <asp:Image ID="imgNuevoPerfil" CssClass="img-fluid mb-3" ImageUrl="https://www.afim.com.eg/public/images/no-photo.png" runat="server" />
+            <asp:Image ID="imgNuevoPerfil" CssClass="img-fluid mb-3 imgPerfil" ImageUrl="https://www.afim.com.eg/public/images/no-photo.png" runat="server" />
         </div>
         <div class="row">
             <div class="mb-3">

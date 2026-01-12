@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Mi perfil" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="AppFinal.Perfil" %>
+﻿<%@ Page Title="Perfil" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Perfil.aspx.cs" Inherits="AppFinal.Perfil" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Styles/fotoPerfil.css" rel="stylesheet" />
@@ -24,35 +24,34 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="row">
-        <div class="col-4">
-            <div class="mb-3">
-                <asp:Label ID="lblPerfil" CssClass="form-label" Font-Bold="true" Font-Size="X-Large" runat="server" Text="Perfil"></asp:Label>
-            </div>
-            <div class="mb-3">
-                <asp:Label ID="lblEmail" CssClass="form-label" Font-Size="Medium" runat="server" Text="Email"></asp:Label>
-                <asp:TextBox ID="txtEmail" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
-            </div>
-            <div class="mb-3">
-                <asp:Label ID="lblNombre" CssClass="form-label" Font-Size="Medium" runat="server" Text="Nombre"></asp:Label>
-                <asp:TextBox ID="txtNombre" ClientIDMode="Static" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
-            </div>
-            <div class="mb-3">
-                <asp:Label ID="lblApellido" CssClass="form-label" Font-Size="Medium" runat="server" Text="Apellido"></asp:Label>
-                <asp:TextBox ID="txtApellido" ClientIDMode="Static" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="mb-3">
-                <asp:Label ID="lblImagen" runat="server" Text="Imágen"></asp:Label>
-                <input type="file" id="txtImagen" class="form-control" runat="server" />
-            </div>
-            <asp:Image ID="imgNuevoPerfil" CssClass="img-fluid mb-3 imgPerfil" ImageUrl="https://www.afim.com.eg/public/images/no-photo.png" runat="server" />
-        </div>
-        <div class="row">
-            <div class="mb-3">
-                <asp:Button ID="btnGuardar" CssClass="btn-2 focus-ring focus-ring-info" ForeColor="#0dcaf0" runat="server" Text="Guardar" OnClientClick="return Validar()" OnClick="btnGuardar_Click" />
+    <div class="container mt-2">
+        <div class="row justify-content-center">
+            <div class="card shadow-sm p-9">
+                <h3 class="mb-3 text-center">Perfil</h3>
+                <div class="row mb-3">
+                    <div class="col-12 text-center">
+                        <asp:Label ID="lblImagen" runat="server" Text="Imágen de perfil"></asp:Label>
+                        <input type="file" id="txtImagen" class="form-control mb-2" runat="server" />
+                        <asp:Image ID="imgNuevoPerfil" CssClass="img-fluid mb-3 imgPerfil rounded-circle" Width="200px" Height="200px" ImageUrl="https://www.afim.com.eg/public/images/no-photo.png" runat="server" />
+                    </div>
+                    <div class="col">
+                        <div class="mb-3">
+                            <asp:Label ID="lblEmail" CssClass="form-label" Font-Size="Medium" runat="server" Text="Email"></asp:Label>
+                            <asp:TextBox ID="txtEmail" CssClass="form-control" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <asp:Label ID="lblNombre" CssClass="form-label" Font-Size="Medium" runat="server" Text="Nombre"></asp:Label>
+                            <asp:TextBox ID="txtNombre" ClientIDMode="Static" CssClass="form-control" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="mb-3">
+                            <asp:Label ID="lblApellido" CssClass="form-label" Font-Size="Medium" runat="server" Text="Apellido"></asp:Label>
+                            <asp:TextBox ID="txtApellido" ClientIDMode="Static" CssClass="form-control" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
+                        </div>
+                        <asp:Button ID="btnGuardar" CssClass="btn-2 focus-ring focus-ring-info" ForeColor="#0dcaf0" runat="server" Text="Guardar" OnClientClick="return Validar()" OnClick="btnGuardar_Click" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 </asp:Content>

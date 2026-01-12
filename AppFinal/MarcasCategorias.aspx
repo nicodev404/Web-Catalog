@@ -31,15 +31,15 @@
     <div class="row">
         <div class="col-6">
             <div class="mb-3">
-                <asp:Label runat="server" Text="Agrega una Marca:" Font-Bold="true" Font-Size="X-Large" CssClass="form-label" Width="300px"></asp:Label>
-                <asp:TextBox ID="txtAgregarMarca" ClientIDMode="Static" runat="server" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0"></asp:TextBox>
+                <asp:Label runat="server" Text="Agrega una Marca:" Font-Size="Medium" CssClass="form-label" Width="300px"></asp:Label>
+                <asp:TextBox ID="txtAgregarMarca" ClientIDMode="Static" runat="server" CssClass="form-control" BorderColor="#0dcaf0"></asp:TextBox>
             </div>
             <div class="mb-3">
                 <asp:Button ID="btnAgregarMarca" CssClass="btn-2 focus-ring focus-ring-success" BackColor="#198754" ForeColor="White" runat="server" Text="Agregar" OnClientClick="return ValidarMarca()" OnClick="btnAgregarMarca_Click" />
             </div>
             <div class="mb-3">
-                <asp:Label runat="server" Text="Agrega una Categoría:" Font-Bold="true" Font-Size="X-Large" CssClass="form-label" Width="300px"></asp:Label>
-                <asp:TextBox ID="txtAgregarCategoria" ClientIDMode="Static" runat="server" CssClass="form-control" BackColor="#333333" ForeColor="White" BorderColor="#0dcaf0"></asp:TextBox>
+                <asp:Label runat="server" Text="Agrega una Categoría:" Font-Size="Medium" CssClass="form-label" Width="300px"></asp:Label>
+                <asp:TextBox ID="txtAgregarCategoria" ClientIDMode="Static" runat="server" CssClass="form-control" BorderColor="#0dcaf0"></asp:TextBox>
             </div>
             <div class="mb-3">
                 <asp:Button ID="btnAgregarCategoria" CssClass="btn-2 focus-ring focus-ring-success" BackColor="#198754" ForeColor="White" runat="server" Text="Agregar" OnClientClick="return ValidarCategoria()" OnClick="btnAgregarCategoria_Click" />
@@ -47,8 +47,8 @@
         </div>
         <div class="col-6">
             <div class="mb-3">
-                <asp:Label runat="server" Text="Elimina una Marca:" Font-Bold="true" Font-Size="X-Large" CssClass="form-label" Width="300px"></asp:Label>
-                <asp:DropDownList ID="ddlMarca" CssClass="form-select" BackColor="#333333" ForeColor="White" Font-Bold="true" runat="server"></asp:DropDownList>
+                <asp:Label runat="server" Text="Elimina una Marca:" Font-Size="Medium" CssClass="form-label" Width="300px"></asp:Label>
+                <asp:DropDownList ID="ddlMarca" CssClass="form-select" BackColor="#666666" ForeColor="White" Font-Bold="true" runat="server"></asp:DropDownList>
             </div>
             <div class="mb-3">
                 <asp:Button ID="btnEliminarMarca" CssClass="btn-2 focus-ring focus-ring-warning" ForeColor="Black" BackColor="#ffc107" runat="server" Text="Eliminar" OnClick="btnEliminarMarca_Click" />
@@ -56,15 +56,15 @@
                     <ContentTemplate>
                         <%if (confirmaElimMarca)
                             {%>
-                        <asp:CheckBox ID="chkConfirmaEliminarMarca" Text="Confirmar eliminación" Font-Bold="true" runat="server" />
+                        <asp:CheckBox ID="chkConfirmaEliminarMarca" Text="Confirmar eliminación" runat="server" />
                         <asp:Button ID="btnConfirmaEliminarMarca" CssClass="btn-2 focus-ring focus-ring-danger" ForeColor="Black" BackColor="#dc3545" runat="server" Text="Eliminar" OnClick="btnConfirmaEliminarMarca_Click" />
                         <%} %>
                     </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
             <div class="mb-3">
-                <asp:Label runat="server" Text="Elimina una Categoria:" Font-Bold="true" Font-Size="X-Large" CssClass="form-label" Width="300px"></asp:Label>
-                <asp:DropDownList ID="ddlCategoria" CssClass="form-select" BackColor="#333333" ForeColor="White" Font-Bold="true" runat="server"></asp:DropDownList>
+                <asp:Label runat="server" Text="Elimina una Categoria:" Font-Size="Medium" CssClass="form-label" Width="300px"></asp:Label>
+                <asp:DropDownList ID="ddlCategoria" CssClass="form-select" BackColor="#666666" ForeColor="White" Font-Bold="true" runat="server"></asp:DropDownList>
             </div>
             <div class="mb-3">
                 <asp:Button ID="btnEliminarCategoria" CssClass="btn-2 focus-ring focus-ring-warning" ForeColor="Black" BackColor="#ffc107" runat="server" Text="Eliminar" OnClick="btnEliminarCategoria_Click" />
@@ -72,7 +72,7 @@
                     <ContentTemplate>
                         <%if (confirmaElimCat)
                             { %>
-                        <asp:CheckBox ID="chkConfirmaEliminarCat" Text="Confirmar eliminación" Font-Bold="true" runat="server" />
+                        <asp:CheckBox ID="chkConfirmaEliminarCat" Text="Confirmar eliminación" runat="server" />
                         <asp:Button ID="btnConfirmaEliminarCat" CssClass="btn-2 focus-ring focus-ring-danger" ForeColor="black" BackColor="#dc3545" runat="server" Text="Eliminar" OnClick="btnConfirmaEliminarCat_Click" />
                         <%} %>
                     </ContentTemplate>

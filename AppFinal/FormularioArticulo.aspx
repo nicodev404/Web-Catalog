@@ -57,11 +57,11 @@
             </div>
             <div class="mb-3">
                 <label for="ddlMarca" class="form-label">Marca</label>
-                <asp:DropDownList ID="ddlMarca" CssClass="form-select" BackColor="#333333" ForeColor="White" Font-Bold="true" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlMarca" CssClass="form-select" BackColor="#666666" ForeColor="White" Font-Bold="true" runat="server"></asp:DropDownList>
             </div>
             <div class="mb-3">
                 <label for="ddlCategoria" class="form-label">Categoría</label>
-                <asp:DropDownList ID="ddlCategoria" CssClass="form-select" BackColor="#333333" ForeColor="White" Font-Bold="true" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlCategoria" CssClass="form-select" BackColor="#666666" ForeColor="White" Font-Bold="true" runat="server"></asp:DropDownList>
             </div>
             <div class="mb-3">
                 <label for="txtPrecio" class="form-label">Precio</label>
@@ -106,7 +106,7 @@
                             AutoPostBack="true" OnTextChanged="txtURLImagen_TextChanged" />
                     </div>
                     <asp:Image ImageUrl="https://www.afim.com.eg/public/images/no-photo.png" runat="server" ID="imgArticulo"
-                        Width="400px" Long="200px" />
+                        Width="300px" Long="150px" />
                 </ContentTemplate>
             </asp:UpdatePanel>
         </div>

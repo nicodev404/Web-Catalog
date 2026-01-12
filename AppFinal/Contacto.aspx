@@ -37,22 +37,30 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="contact-form">
-        <div class="form-group">
-            <asp:Label ID="lblEmail" Font-Bold="true" Font-Size="X-Large" CssClass="form-label" runat="server" Text="Email"></asp:Label>
-            <asp:TextBox ID="txtEmail" ClientIDMode="Static" CssClass="form-control" BackColor="#333333" BorderColor="#0dcaf0" ForeColor="White" runat="server"></asp:TextBox>
-            <asp:RegularExpressionValidator CssClass="Validacion" ErrorMessage="Formato email requerido" ControlToValidate="txtEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" runat="server" />
-        </div>
-        <div class="form-group">
-            <asp:Label ID="lblAsunto" Font-Bold="true" Font-Size="X-Large" CssClass="form-label" runat="server" Text="Asunto"></asp:Label>
-            <asp:TextBox ID="txtAsunto" ClientIDMode="Static" CssClass="form-control" BackColor="#333333" BorderColor="#0dcaf0" ForeColor="White" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <asp:Label ID="lblMensaje" Font-Bold="true" Font-Size="X-Large" CssClass="form-label" runat="server" Text="Mensaje"></asp:Label>
-            <asp:TextBox ID="txtMensaje" ClientIDMode="Static" TextMode="MultiLine" CssClass="form-control" BackColor="#333333" BorderColor="#0dcaf0" ForeColor="White" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <asp:Button ID="btnEnviar" CssClass="btn-2 focus-ring focus-ring-info" runat="server" Text="Enviar" OnClientClick="return Validar()" OnClick="btnEnviar_Click" />
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-4">
+                <div class="card shadow-sm p-4">
+                    <h3 class="mb-3">Contáctanos</h3>
+                    <div class="mb-3">
+                        <asp:Label ID="lblEmail" Font-Size="Medium" CssClass="form-label" runat="server" Text="Email"></asp:Label>
+                        <asp:TextBox ID="txtEmail" ClientIDMode="Static" CssClass="form-control" BorderColor="#0dcaf0" runat="server" Placeholder="email@gmail.com"></asp:TextBox>
+                        <asp:RegularExpressionValidator CssClass="Validacion" ErrorMessage="Formato email requerido" ControlToValidate="txtEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" runat="server" />
+                    </div>
+                    <div class="mb-3">
+                        <asp:Label ID="lblAsunto"  Font-Size="Medium" CssClass="form-label" runat="server" Text="Asunto"></asp:Label>
+                        <asp:TextBox ID="txtAsunto" ClientIDMode="Static" CssClass="form-control" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+                        <asp:Label ID="lblMensaje" Font-Size="Medium" CssClass="form-label" runat="server" Text="Mensaje"></asp:Label>
+                        <asp:TextBox ID="txtMensaje" ClientIDMode="Static" TextMode="MultiLine" CssClass="form-control" BorderColor="#0dcaf0" runat="server"></asp:TextBox>
+                    </div>
+                    <div class="mb-3">
+                        <asp:Button ID="btnEnviar" CssClass="btn-2 focus-ring focus-ring-info" runat="server" Text="Enviar" OnClientClick="return Validar()" OnClick="btnEnviar_Click" />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
 </asp:Content>

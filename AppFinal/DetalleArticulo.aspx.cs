@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.EnterpriseServices;
 using System.Globalization;
 using System.Linq;
 using System.Web;
@@ -13,16 +14,17 @@ namespace AppFinal
 {
     public partial class DetalleArticulo : System.Web.UI.Page
     {
+        public Articulo articulo { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
                 if (!IsPostBack)
                 {
-                    cargarListasDDL();
-                    if (Request.QueryString["Id"] != null)
+                    if (Request.QueryString["id"] != null)
                     {
-                        int idArticulo = int.Parse(Request.QueryString["Id"]);
+                        int idArticulo = int.Parse(Request.QueryString["id"]);
                         cargarArticulo(idArticulo);
                     }
                 }
@@ -30,59 +32,29 @@ namespace AppFinal
             catch (Exception ex)
             {
                 Session.Add("error", ex.ToString());
-                Response.Redirect("Error.aspx", false);
+                Response.Redirect("Default.aspx", false);
             }
         }
 
         private void cargarArticulo(int id)
         {
-            Articulo seleccionado = new Articulo();
+            articulo = new Articulo();
 
             if (Session["ListaArticulos"] != null)
             {
                 List<Articulo> lista = (List<Articulo>)Session["ListaArticulos"];
-                seleccionado = lista.Find(x => x.Id == id);
+                articulo = lista.Find(x => x.Id == id);
             }
-            if (seleccionado != null)
+
+            if (articulo != null)
             {
-                txtCodigo.Text = seleccionado.Codigo;
-                txtNombre.Text = seleccionado.Nombre;
-                ddlMarca.SelectedValue = seleccionado.Marca.Id.ToString();
-                ddlCategoria.SelectedValue = seleccionado.Categoria.Id.ToString();
-                txtPrecio.Text = seleccionado.Precio.ToString("N2", CultureInfo.GetCultureInfo("es-AR"));
-                txtDescripcion.Text = seleccionado.Descripcion;
-                string imagen = string.IsNullOrEmpty(seleccionado.UrlImagen) ? "https://www.afim.com.eg/public/images/no-photo.png" :
-                    seleccionado.UrlImagen;
+                string imagen = string.IsNullOrEmpty(articulo.UrlImagen)
+                    ? "https://www.afim.com.eg/public/images/no-image.png"
+                    : articulo.UrlImagen;
+
                 imgArticulo.ImageUrl = imagen;
-                inhabilitarControl();
             }
-            else
-                Response.Redirect("Default.aspx");
-        }
-
-        private void cargarListasDDL()
-        {
-            MarcaCategoria marcaNegocio = new MarcaCategoria();
-            ddlMarca.DataSource = marcaNegocio.obtenerMarcas();
-            ddlMarca.DataTextField = "Descripcion";
-            ddlMarca.DataValueField = "Id";
-            ddlMarca.DataBind();
-
-            MarcaCategoria categoriaNegocio = new MarcaCategoria();
-            ddlCategoria.DataSource = categoriaNegocio.obtenerCategorias();
-            ddlCategoria.DataTextField = "Descripcion";
-            ddlCategoria.DataValueField = "Id";
-            ddlCategoria.DataBind();
-        }
-
-        private void inhabilitarControl()
-        {
-            txtCodigo.Enabled = false;
-            txtNombre.Enabled = false;
-            ddlMarca.Enabled = false;
-            ddlCategoria.Enabled = false;
-            txtDescripcion.Enabled = false;
-            txtPrecio.Enabled = false;
         }
     }
 }
+

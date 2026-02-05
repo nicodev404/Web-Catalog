@@ -8,12 +8,12 @@
 
     <div class="mb-3">
         <asp:Label runat="server" Text="Filtrar" CssClass="form-label" Font-Size="X-Large"></asp:Label>
-        <asp:TextBox ID="txtFiltro" AutoPostBack="true" OnTextChanged="txtFiltro_TextChanged" CssClass="form-control" Width="300px" BorderColor="#0dcaf0" runat="server" Placeholder="nombre, código..."/>
+        <asp:TextBox ID="txtFiltro" AutoPostBack="true" OnTextChanged="txtFiltro_TextChanged" CssClass="form-control" Width="300px" BorderColor="#212529" runat="server" Placeholder="nombre, código..."/>
     </div>
     <div class="col-6" style="display: flex; flex-direction: column; justify-content: flex-end">
         <div class="mb-3">
             <asp:CheckBox ID="chkFiltroAvanzado" Text="Filtro Avanzado" runat="server" AutoPostBack="true" OnCheckedChanged="chkFiltroAvanzado_CheckedChanged" />
-            <asp:Button ID="btnLimpiarFiltro" CssClass="btn-2 focus-ring focus-ring-info" ForeColor="#dcaf0" runat="server" Text="Recargar" OnClick="btnLimpiarFiltro_Click" />
+            <asp:Button ID="btnLimpiarFiltro" CssClass="btn btn-outline-dark" runat="server" Text="Recargar" OnClick="btnLimpiarFiltro_Click" />
         </div>
     </div>
     <%if (chkFiltroAvanzado.Checked)
@@ -38,13 +38,13 @@
         <div class="col-3">
             <div class="mb-3">
                 <asp:Label runat="server" Text="Filtro"></asp:Label>
-                <asp:TextBox ID="txtFiltroAvanzado" runat="server" CssClass="form-control" BorderColor="#0dcaf0"></asp:TextBox>
+                <asp:TextBox ID="txtFiltroAvanzado" runat="server" CssClass="form-control" BorderColor="#212529"></asp:TextBox>
             </div>
         </div>
         <div class="row">
             <div class="col-3">
                 <div class="mb-3">
-                    <asp:Button ID="btnBuscar" CssClass="btn-2 focus-ring focus-ring-info" ForeColor="#0dcaf0" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
+                    <asp:Button ID="btnBuscar" CssClass="btn btn-outline-dark" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
         <ContentTemplate>
             <asp:GridView runat="server" ID="dgvArticulos" DataKeyNames="Id" OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged" CssClass="table table-bordered"
                 AutoGenerateColumns="false" OnPageIndexChanging="dgvArticulos_PageIndexChanging" AllowPaging="true" PageSize="8" HeaderStyle-HorizontalAlign="Center"
-                RowStyle-HorizontalAlign="Center" HeaderStyle-BorderColor="#0dcaf0" HeaderStyle-Font-Bold="true" PagerStyle-BackColor="#0dcaf0">
+                RowStyle-HorizontalAlign="Center" HeaderStyle-BorderColor="#212529" HeaderStyle-Font-Bold="true" PagerStyle-BackColor="#0dcaf0">
                 <Columns>
                     <asp:BoundField HeaderText="Código" DataField="Codigo" />
                     <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
@@ -68,6 +68,7 @@
         </ContentTemplate>
     </asp:UpdatePanel>
 
-    <asp:Button ID="btnIrAFormulario" runat="server" Text="Agregar Artículo" CssClass="btn-2 focus-ring focus-ring-info" ForeColor="#0dcaf0" OnClick="btnIrAFormulario_Click" />
-    <asp:Button ID="btnIrAgregarMyC" runat="server" Text="Gestionar Marcas/Categorías" CssClass="btn-2 focus-ring focus-ring-info" ForeColor="#0dcaf0" OnClick="btnIrAgregarMyC_Click" />
+    <asp:Button ID="btnIrAFormulario" runat="server" Text="Agregar Artículo" CssClass="btn btn-outline-dark" OnClick="btnIrAFormulario_Click" />
+    <asp:Button ID="btnIrAgregarMyC" runat="server" Text="Gestionar Marcas/Categorías" CssClass="btn btn-outline-dark" OnClick="btnIrAgregarMyC_Click" />
+    <a href="Default.aspx" class="btn btn-outline-dark">Volver al catálogo</a>
 </asp:Content>

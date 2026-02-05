@@ -45,15 +45,15 @@
 
             <div class="mb-3">
                 <label for="txtId" class="form-label">Id</label>
-                <asp:TextBox runat="server" ID="txtId" CssClass="form-control" />
+                <asp:TextBox runat="server" ID="txtId" BorderColor="#212529" CssClass="form-control" />
             </div>
             <div class="mb-3">
                 <label for="txtCodigo" class="form-label">Código</label>
-                <asp:TextBox ClientIDMode="Static" runat="server" ID="txtCodigo" CssClass="form-control" />
+                <asp:TextBox ClientIDMode="Static" runat="server" ID="txtCodigo" BorderColor="#212529" CssClass="form-control" />
             </div>
             <div class="mb-3">
                 <label for="txtNombre" class="form-label">Nombre</label>
-                <asp:TextBox ClientIDMode="Static" runat="server" ID="txtNombre" CssClass="form-control" />
+                <asp:TextBox ClientIDMode="Static" runat="server" ID="txtNombre" BorderColor="#212529" CssClass="form-control" />
             </div>
             <div class="mb-3">
                 <label for="ddlMarca" class="form-label">Marca</label>
@@ -65,18 +65,19 @@
             </div>
             <div class="mb-3">
                 <label for="txtPrecio" class="form-label">Precio</label>
-                <asp:TextBox ClientIDMode="Static" runat="server" ID="txtPrecio" CssClass="form-control" />
+                <asp:TextBox ClientIDMode="Static" runat="server" ID="txtPrecio" BorderColor="#212529" CssClass="form-control" />
                 <asp:RegularExpressionValidator CssClass="Validacion" ErrorMessage="Solo números" ControlToValidate="txtPrecio" ValidationExpression="^[0-9]+$" runat="server" />
             </div>
             <div class="formulario-accion">
                 <div class="botones-accion">
-                    <asp:Button ID="btnAceptar" runat="server" Text="Agregar" CssClass="btn-2 focus-ring focus-ring-success" BackColor="#198754" ForeColor="White" OnClientClick="return Validar()" OnClick="btnAceptar_Click" />
+                    <asp:Button ID="btnAceptar" runat="server" Text="Agregar" CssClass="btn btn-outline-success" OnClientClick="return Validar()" OnClick="btnAceptar_Click" />
 
                     <asp:UpdatePanel runat="server">
                         <ContentTemplate>
-                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn-2 focus-ring focus-ring-warning" BackColor="#ffc107" ForeColor="black" OnClick="btnEliminar_Click" />
+                            <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-outline-warning" OnClick="btnEliminar_Click" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
+                    <a href="Default.aspx" class="btn btn-outline-dark">Volver al catálogo</a>
                 </div>
             </div>
 
@@ -86,7 +87,7 @@
                         { %>
                     <div class="mb-3">
                         <asp:CheckBox Text="Confirmar eliminación" Font-Bold="true" ID="chkConfirmarEliminacion" runat="server" />
-                        <asp:Button ID="btnConfirmarEliminacion" runat="server" Text="Eliminar" CssClass="btn-2 focus-ring focus-ring-danger" BackColor="#dc3545" ForeColor="Black" OnClick="btnConfirmarEliminacion_Click" />
+                        <asp:Button ID="btnConfirmarEliminacion" runat="server" Text="Eliminar" CssClass="btn btn-outline-danger" OnClick="btnConfirmarEliminacion_Click" />
                     </div>
                     <%} %>
                 </ContentTemplate>
@@ -96,13 +97,13 @@
         <div class="formulario-columna derecha">
             <div class="mb-3">
                 <label for="txtDescripcion" class="form-label">Descripción</label>
-                <asp:TextBox runat="server" TextMode="MultiLine" Rows="2" ID="txtDescripcion" CssClass="form-control" />
+                <asp:TextBox runat="server" TextMode="MultiLine" Rows="2" ID="txtDescripcion" BorderColor="#212529" CssClass="form-control" />
             </div>
             <asp:UpdatePanel ID="updtpnlImagen" runat="server">
                 <ContentTemplate>
                     <div class="mb-3">
                         <label for="txtURLImagen" class="form-label">URL Imágen</label>
-                        <asp:TextBox runat="server" ID="txtURLImagen" CssClass="form-control"
+                        <asp:TextBox runat="server" ID="txtURLImagen" CssClass="form-control" BorderColor="#212529"
                             AutoPostBack="true" OnTextChanged="txtURLImagen_TextChanged" />
                     </div>
                     <asp:Image ImageUrl="https://www.afim.com.eg/public/images/no-photo.png" runat="server" ID="imgArticulo"

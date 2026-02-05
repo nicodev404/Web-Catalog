@@ -89,11 +89,13 @@
     <Content Include="Login.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="Registro.aspx" />
-    <Content Include="Styles\Botones.css" />
     <Content Include="Styles\CardStyle.css" />
+    <Content Include="Styles\ContenedorContacto.css" />
+    <Content Include="Styles\ContenedorPerfil.css" />
+    <Content Include="Styles\DetalleArticulo.css" />
     <Content Include="Styles\FormularioStyle.css" />
     <Content Include="Styles\FooterStyle.css" />
-    <Content Include="Styles\fotoPerfil.css" />
+    <Content Include="Styles\media.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +184,7 @@
   <ItemGroup>
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\nicoDev404-WebCatalog.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

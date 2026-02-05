@@ -1,0 +1,16 @@
+﻿@media (max-width: 480px) {
+    header {
+        position: static;
+    }
+
+    #navbar {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    body {
+        position: center;
+        flex-direction: column;
+    }
+}

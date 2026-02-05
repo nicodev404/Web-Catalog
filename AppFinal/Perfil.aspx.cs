@@ -21,6 +21,7 @@ namespace AppFinal
                     {
                         Usuario usuario = (Usuario)Session["usuario"];
                         txtEmail.Text = usuario.Email;
+                        txtEmail.Enabled = false;
                         txtEmail.ReadOnly = true;
                         txtNombre.Text = usuario.Nombre;
                         txtApellido.Text = usuario.Apellido;
@@ -45,7 +46,7 @@ namespace AppFinal
 
                 if (txtImagen.PostedFile.FileName != "")
                 {
-                    string ruta = Server.MapPath("./Images/");
+                    string ruta = Server.MapPath("~/Images/");
                     txtImagen.PostedFile.SaveAs(ruta + "perfil-" + usuario.Id + ".jpg");
                     usuario.URLImagenPerfil = "perfil-" + usuario.Id + ".jpg";
                 }

@@ -1,10 +1,10 @@
-﻿
-.card {
+﻿.card {
     max-width: 25em;
-    background-color: #fff;
+    background-color: white;
     padding: 1em;
-    box-shadow: 0 5px 5px #e1e1e1;
-    font-family: sans-serif;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    font-family: "Montserrat", sans-serif;
+    border-radius: 10px;
 }
 
     .card img {
@@ -19,7 +19,7 @@
 
 
     .card:hover {
-        background-color: #333333;
+        background-color: #212529;
         color: white;
     }
 

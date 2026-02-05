@@ -29,24 +29,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-4">
-                <div class="card shadow-sm p-4">
-                    <h3 class="mb-3">Registrarse</h3>
-                    <div class="mb-3">
-                        <asp:Label ID="lblEmail" Font-Size="Medium" runat="server" Text="Email"></asp:Label>
-                        <asp:TextBox ID="txtEmail" ClientIDMode="Static" CssClass="form-control" BorderColor="#0dcaf0" runat="server" Placeholder="email@gmail.com"></asp:TextBox>
-                        <asp:RegularExpressionValidator CssClass="Validacion" ErrorMessage="Formato email requerido" ControlToValidate="txtEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" runat="server" />
-                    </div>
-                    <div class="mb-3">
-                        <asp:Label ID="lblPass" Font-Size="Medium" runat="server" Text="Contraseña"></asp:Label>
-                        <asp:TextBox ID="txtPass" ClientIDMode="Static" CssClass="form-control" BorderColor="#0dcaf0" TextMode="Password" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="mb-3">
-                        <asp:Button ID="btnRegistrar" CssClass="btn-2 focus-ring focus-ring-info" runat="server" Text="Registrarse" OnClientClick="return Validar()" OnClick="btnRegistrar_Click" />
-                    </div>
-                </div>
+    <div class="ContenedorContacto">
+        <div class="contacto-container">
+            <h3 class="text-center">Registrarse</h3>
+            <div class="form-group">
+                <asp:Label ID="lblEmail" Font-Size="Medium" CssClass="form-group-label" runat="server" Text="Email"></asp:Label>
+                <asp:TextBox ID="txtEmail" ClientIDMode="Static" CssClass="form-control" BorderColor="#212529" runat="server" Placeholder="email@email.com"></asp:TextBox>
+                <asp:RegularExpressionValidator CssClass="Validacion" ErrorMessage="Formato email requerido" ControlToValidate="txtEmail" ValidationExpression="^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" runat="server" />
+            </div>
+            <div class="form-group">
+                <asp:Label ID="lblPass" Font-Size="Medium" CssClass="form-group-label" runat="server" Text="Contraseña"></asp:Label>
+                <asp:TextBox ID="txtPass" ClientIDMode="Static" CssClass="form-control" BorderColor="#212529" TextMode="Password" runat="server"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Button ID="btnRegistrar" CssClass="btn btn-outline-dark" runat="server" Text="Registrarse" OnClientClick="return Validar()" OnClick="btnRegistrar_Click" />
             </div>
         </div>
     </div>

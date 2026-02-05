@@ -8,9 +8,13 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="styles/FooterStyle.css" rel="stylesheet" />
-    <link href="styles/Botones.css" rel="stylesheet" />
+    <link href="Styles/FooterStyle.css" rel="stylesheet" />
+    <link href="Styles/Botones.css" rel="stylesheet" />
     <link href="Styles/CardStyle.css" rel="stylesheet" />
+    <link href="Styles/media.css" rel="stylesheet" />
+    <link href="Styles/ContenedorPerfil.css" rel="stylesheet" />
+    <link href="Styles/ContenedorContacto.css" rel="stylesheet" />
+    <link href="Styles/DetaleArticulo.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">

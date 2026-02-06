@@ -2,10 +2,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Styles\CardStyle.css" rel="stylesheet" />
+    <link href="Styles\media.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 justify-content-center">
         <asp:Repeater runat="server" ID="Repetidor">
             <ItemTemplate>
                 <div class="col">

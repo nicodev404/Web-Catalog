@@ -184,7 +184,7 @@
   <ItemGroup>
     <Content Include="MasterPage.Master" />
     <None Include="packages.config" />
-    <None Include="Properties\PublishProfiles\nicoDev404-WebCatalog.pubxml" />
+    <None Include="Properties\PublishProfiles\Web-Catalog-Publish.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,45 @@
-﻿@media (max-width: 480px) {
+﻿
+
+@media (min-width: 768px)(max-width: 1200px) {
+
+    .row > .col {
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .row > .col {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        justify-content: center;
+    }
+
+    .card {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+
+    .articulo-card {
+        flex-direction: column;
+    }
+
+    .articulo-imagen-seccion {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+@media (max-width: 480px) {
+
     header {
         position: static;
     }
@@ -10,7 +51,6 @@
     }
 
     body {
-        position: center;
-        flex-direction: column;
+        text-align: center;
     }
 }

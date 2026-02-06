@@ -73,14 +73,3 @@
     display: flex;
     gap: 15px;
 }
-
-@media (max-width: 768px) {
-    .articulo-card {
-        flex-direction: column;
-    }
-
-    .articulo-imagen-seccion {
-        border-right: none;
-        border-bottom: 1px solid #eee;
-    }
-}

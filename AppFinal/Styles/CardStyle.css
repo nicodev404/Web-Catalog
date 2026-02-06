@@ -1,5 +1,5 @@
 ﻿.card {
-    max-width: 25em;
+    max-width: 100%;
     background-color: white;
     padding: 1em;
     box-shadow: 0 10px 30px rgba(0,0,0,0.03);
@@ -22,9 +22,3 @@
         background-color: #212529;
         color: white;
     }
-
-@media screen and (max-width: 576px) {
-    .card {
-        font-size: 0.9em;
-    }
-}

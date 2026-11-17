@@ -72,5 +72,5 @@ A web application built with **ASP.NET Web Forms** to manage an online product c
 
 ### 🔗 Links
 
-- **[Live App](https://nicodevwebcatalog.somee.com/)**
+- **[Live App](http://nicodevwebcatalog.somee.com)**
 - **[Source Code](https://github.com/nicodev404/Web-Catalog)**
